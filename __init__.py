@@ -25,16 +25,13 @@ def curdir():
 def getFileName():
 
     filename = bpy.path.basename(bpy.context.blend_data.filepath)
-    filename = os.path.splitext(filename)[0]  
-    
+    filename = os.path.splitext(filename)[0]
 
     return filename
 
 
 def getFilePath():
 
-    
-    
     return bpy.data.filepath
 
 
@@ -69,7 +66,7 @@ def makeCacheFolder(folder):
 
 def getSelObject():
     selobjs = bpy.context.selected_objects
-    
+
     return selobjs
 
 
@@ -116,7 +113,6 @@ def importAlembic(fpath):
         is_sequence=False, as_background_job=True)
     """
 
-    
     bpy.ops.wm.alembic_import(
         filepath=fpath, set_frame_range=False, as_background_job=False,  is_sequence=False)
     return
@@ -144,7 +140,7 @@ class OBJECT_OT_CacheItOperator(bpy.types.Operator):
         fname = getFileName()
         fpath = getFilePath()
         folpath = getFolderPath(fpath)
-        
+
         cachefolder = makeCacheFolder(folpath)
 
         os.chdir(folpath)
@@ -156,20 +152,13 @@ class OBJECT_OT_CacheItOperator(bpy.types.Operator):
             obj = getSelObject()[0]
 
             coll_active = obj.users_collection[0]
-            
+
             expAlembicfile = exportAlembicFile(cachefolder, obj.name)
             expAlembicfile = os.path.realpath(expAlembicfile)
             self.report(
                 {'INFO'}, "Alembic file is exported > " + expAlembicfile)
             self.report({'INFO'}, "Importing the Alembic file......")
 
-            
-            
-
-            
-            
-
-            
             alembic_status = True
 
             for obj in getSelObject():
@@ -191,28 +180,10 @@ class OBJECT_OT_CacheItOperator(bpy.types.Operator):
                 bpy.context.scene.collection.children.link(coll_cache)
 
             for obj in getSelObject():
-                
-                
-                
+
                 coll_cache.objects.link(obj)
                 coll_active.objects.link(obj)
                 bpy.context.scene.collection.objects.unlink(obj)
-
-        
-
-        
-        
-        
-        
-        
-
-        
-        
-
-        
-        
-        
-        
 
         return {'FINISHED'}
 
