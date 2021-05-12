@@ -6,7 +6,10 @@ This add-on is for caching the existing animation, physics and mesh deformations
 Being able to cache complicated scene setups to the disk is very helpful during production. 
 
 
-Download this repository as a zip file and install it like a regular Blender add-on.
+Download the zip file and install it like a regular Blender add-on.
+
+[blender-cacheit_0.1.zip](https://github.com/kursad-k/blender-cacheit/files/6462723/blender-cacheit_0.1.zip)
+
 
 
 
