@@ -7,6 +7,7 @@ bl_info = {
     "name": "CacheIt",
     "author": "Kursad Karatas",
     "description": "",
+    "version": (0, 1),
     "blender": (2, 93, 0),
     "location": "",
     "warning": "",
