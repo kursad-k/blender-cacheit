@@ -7,8 +7,8 @@ Being able to cache complicated scene setups to the disk is very helpful during 
 
 
 Download the zip file and install it like a regular Blender add-on.
+[blender-cacheit_v0.1.zip](https://github.com/kursad-k/blender-cacheit/files/6462729/blender-cacheit_v0.1.zip)
 
-[blender-cacheit_0.1.zip](https://github.com/kursad-k/blender-cacheit/files/6462723/blender-cacheit_0.1.zip)
 
 
 
